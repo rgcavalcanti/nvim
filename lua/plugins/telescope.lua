@@ -1,10 +1,26 @@
 return {
-    'nvim-telescope/telescope.nvim', tag = 'v0.2.0',
-      dependencies = { 'nvim-lua/plenary.nvim' },
-      keys = {
-	{ "<leader>ff", "<cmd>Telescope find_files<cr>" },
-	{ "<leader>fg", "<cmd>Telescope live_grep<cr>" },
-	{ "<leader>fb", "<cmd>Telescope buffers<cr>" },
-	{ "<leader>fh", "<cmd>Telescope help_tags<cr>" },
-      },
-    }
+	{
+		"nvim-telescope/telescope.nvim",
+		tag = "v0.2.0",
+		dependencies = { "nvim-lua/plenary.nvim" },
+		keys = {
+			{ "<leader>ff", "<cmd>Telescope find_files<cr>" },
+			{ "<leader>fg", "<cmd>Telescope live_grep<cr>" },
+			{ "<leader>fb", "<cmd>Telescope buffers<cr>" },
+			{ "<leader>fh", "<cmd>Telescope help_tags<cr>" },
+		},
+	},
+	{
+		"nvim-telescope/telescope-ui-select.nvim",
+		config = function()
+			require("telescope").setup({
+				extensions = {
+					["ui-select"] = {
+						require("telescope.themes").get_dropdown({}),
+					},
+				},
+			})
+			require("telescope").load_extension("ui-select")
+		end,
+	},
+}
