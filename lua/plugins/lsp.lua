@@ -8,6 +8,12 @@ return {
 	},
 	dependencies = {
 		{ "mason-org/mason.nvim", opts = {} },
-		"neovim/nvim-lspconfig",
+		{
+			"neovim/nvim-lspconfig",
+			config = function()
+				vim.diagnostic.enable()
+				vim.diagnostic.config({ virtual_text = true })
+			end,
+		},
 	},
 }

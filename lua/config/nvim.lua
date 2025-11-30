@@ -1,5 +1,6 @@
 -- Set simple options
 vim.o.number = true -- Enable line numbers
+vim.o.numberwidth = 4 -- Increase number width
 vim.o.relativenumber = true -- Enable relative line numbers
 vim.o.ignorecase = true -- Ignore case when searching
 vim.o.smartcase = true -- But don't ignore it when search pattern contains uppercase letters
@@ -12,6 +13,3 @@ vim.o.incsearch = true -- Show search matches as you type
 vim.o.cmdheight = 1 -- Command line height
 vim.o.undofile = true -- Save undo history
 vim.o.updatetime = 300 -- Faster cursor update time for some features
-
-vim.diagnostic.enable()
-vim.diagnostic.config({ virtual_text = true })

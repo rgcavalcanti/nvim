@@ -1,8 +1,14 @@
 return {
 	"nvimtools/none-ls.nvim",
+
 	dependencies = {
 		"nvimtools/none-ls-extras.nvim",
 	},
+
+	keys = {
+		{ "<leader>gf", vim.lsp.buf.format, "n" },
+	},
+
 	config = function()
 		local null_ls = require("null-ls")
 
@@ -14,7 +20,5 @@ return {
 				require("none-ls.diagnostics.eslint_d"),
 			},
 		})
-
-		vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format)
 	end,
 }
