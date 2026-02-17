@@ -5,13 +5,19 @@ return {
 	version = "1.*",
 
 	opts = {
-		keymap = { preset = "super-tab" },
+		keymap = {
+			preset = "super-tab",
+		},
 
 		appearance = {
 			nerd_font_variant = "mono",
 		},
 
-		completion = { documentation = { auto_show = false } },
+		completion = {
+			documentation = { auto_show = false },
+
+			ghost_text = { enabled = true },
+		},
 
 		sources = {
 			default = { "lsp", "path", "snippets", "buffer" },
